@@ -6,6 +6,12 @@ let linhas = '';
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
+    adicionaLinha();
+    atualizaTabela();
+
+});
+
+function adicionaLinha() {
     const inputNomeContato = document.getElementById('nome-contato');
     const inputNumContato = document.getElementById('numero-contato');
 
@@ -18,6 +24,12 @@ form.addEventListener("submit", function(e) {
 
     linhas += linha;
 
+    inputNomeContato.value = '';
+    inputNumContato.value = '';
+
+}
+
+function atualizaTabela() {
     const corpoTabela = document.querySelector("tbody");
     corpoTabela.innerHTML = linhas;
-});
+}
